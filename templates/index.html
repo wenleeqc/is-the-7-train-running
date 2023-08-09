@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Is the {{ trainLine }} train running?</title>
+</head>
+<body>
+    {% if message %}
+        <div class="wrapper">
+            <div>
+                <h1 class="nope">Uh, oh...</h1>
+                <p>{{ message }}.</p>
+                <a href="https://new.mta.info/" target="_blank">Check MTA for more info.</a>
+            </div>
+        </div>
+        
+    {% else %}
+        <div>
+            <h1 class="yes">All Good!</h1>
+            <h2>The {{ trainLine }} train is running.</h2>
+        </div>
+    {% endif %}
+</body>
+</html>
